@@ -1,0 +1,27 @@
+
+    {%extends "user/home_layout.html"%}
+    {%block content%}
+    <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+        
+        {% with message= get_flashed_messages()%}
+      {%if message%}
+      {%for m in message:%}
+      <div class="alert alert-info">{{m}}</div>
+      {%endfor%}
+      {%endif%}
+      {%endwith%}
+        <div class="mb-3">
+            <form action="/newtopic" method="post"> <!--pay attention to the formmmm-->
+                <div class="mb-3">
+                    <label>Post
+                        <textarea class="form-control"  cols="50" rows="4" name="content" placeholder="comment"></textarea>
+                    </label>
+                    </div> 
+                <div class="mb-3">
+                        <button type="submit" class="btn btn-dark form-control">submit</button>
+                </div> 
+            </form>
+    </div>
+    </div>
+
+    {%endblock%}

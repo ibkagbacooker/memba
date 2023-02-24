@@ -1,0 +1,24 @@
+{% extends "user/home_layout.html"%}
+  
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+<h3>Change profile picture</h3> 
+
+<form method="post" enctype="multipart/form-data" action="">
+    <div class = "col-md-2">select File </div>
+
+    <div class = "col-md-2">
+        
+        <input type="file" name="pix"> upload
+    </div>
+    <div class = "col-md-2">
+
+        <button type="submit" class="btn btn-dark"> upload</button>
+    </div>
+
+    
+</form>
+
+
+ 
+{% endblock %}

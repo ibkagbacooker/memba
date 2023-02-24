@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="">
+    <link href="{{url_for('static',filename='fontawesome/css/all.css')}}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" defer src="{{url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <title>party</title>
+</head>
+<body>
+
+    <form action="" method="post">
+        <label>NAME
+            <input type="text" name = "partyname" class='form-control' placeholder="party name">
+        </label>
+        <br>
+        <label>short code
+            <input type="text" name = "partycode" class='form-control' placeholder="party code">
+        </label>
+        <br>
+        <label>contact
+            <input type="text" name = "partycontact" class='form-control' placeholder="party contact">
+        </label>
+        <br>
+        <button type="submit" class="btn btn-dark">Add</button>
+
+    </form>
+</body>
+</html>

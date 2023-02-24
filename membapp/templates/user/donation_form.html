@@ -1,0 +1,40 @@
+
+    {%extends "user/home_layout.html"%}
+    {%block content%}
+    <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+        
+        {% with message= get_flashed_messages()%}
+      {%if message%}
+      {%for m in message:%}
+      <div class="alert alert-info">{{m}}</div>
+      {%endfor%}
+      {%endif%}
+      {%endwith%}
+        <div class="mb-3">
+            <form action="{{url_for('donate')}}" method="post"> 
+                <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token()}}">
+                <!--pay attention to the formmmm-->
+                <div class="mb-3 form-group row">
+                    <label class="col-md-2">Full Name:</label>
+                    <div class="col-md-6">
+                        <input type="text" name="fullname" value="{%if deets%}{{deets.user_fullname}}{%endif%}" class="form-control border-success"> 
+                    </div>
+                        
+                    
+                </div> 
+                <div class="mb-3 form-group row">
+                    <label class="col-md-2">Amount</label>
+                    <div class="col-md-6">
+                        <input type="text" name="amount" class="form-control border-success"> 
+                    </div>
+                        
+                    <input type="hidden" name="csrf_token" id="csrf_token" value="{{csrf_token()}}"> 
+                </div> 
+                <div class="mb-3">
+                        <button  class="btn btn-dark form-control">donate</button>
+                </div> 
+            </form>
+    </div>
+    </div>
+
+    {%endblock%}

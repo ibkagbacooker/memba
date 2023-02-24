@@ -1,0 +1,23 @@
+{% extends "user/home_layout.html"%}
+  
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+  <h3>Donation confirmation page</h3>
+
+  <p>This is your dashboard, please use the second-level menu to carry out tasks</p>
+  <p>Please confirm your donation details as follows</p>
+  %if donor%}
+  <p>thank you {{donor.don_donor}}</p>
+  <p>Your amount is {{donor.don_amt}}</p>
+  <p>Your ref number is {{refno}}</p>
+
+  <form method="post" action="/confirm">
+    <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token()}}">
+    <button class="btn btn-lg btn-warning">confirm and Make payment</button>
+  </form>
+
+  {%endif%}
+  
+ </div>
+ 
+{% endblock %}
